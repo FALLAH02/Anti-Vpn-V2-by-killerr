@@ -1,54 +1,12 @@
-MoroccoAntiVPN 
-
-Advanced IP Country Verification for SA-MP & open.mp 
-
-Protect your server. Allow Morocco. Block foreign IPs.
-
-About 
-
-MoroccoAntiVPN is a lightweight and easy-to-use Pawn include designed for SA-MP and open.mp servers.
-
-The system verifies player IP addresses and allows connections only from Morocco (MA).
-
-Features Feature Description Morocco Only Allows Moroccan IP addresses GeoIP Check Automatic country verification Auto Kick Blocks foreign IP addresses HTTP System Online IP verification Easy Integration Simple .inc installation Localhost Localhost exemption Installation 
-
-Step 01 — Download
-
-Download the latest MoroccoAntiVPN.inc file.
-
-Step 02 — Install
-
-Move the file into:
-
-pawno/include/MoroccoAntiVPN.inc 
-
-Step 03 — Include
-
-Add this line to your gamemode:
-
-#include <MoroccoAntiVPN> Configuration 
-
-Default country configuration:
-
-#define MAV_ALLOWED_COUNTRY "MA" #define MAV_KICK_DELAY 1500 Implementation Initialize public OnGameModeInit() { MAV_Init(); return 1; } Player Connection public OnPlayerConnect(playerid) { MAV_CheckPlayer(playerid); return 1; } Player Disconnection public OnPlayerDisconnect(playerid, reason) { MAV_ResetPlayer(playerid); return 1; } 
-
-Note: Integrate these calls into your existing callbacks. Do not create duplicate callbacks.
-
-Requirements SA-MP 0.3.7 or open.mp Pawn Compiler Internet connection ip-api.com GeoIP service Limitations 
-
-This version performs country verification only.
-
-VPN, Proxy and Hosting detection are not included yet.
-
-Credits 
-
-MoroccoAntiVPN Development
-
-Made for the SA-MP & open.mp community.
-
-License 
-
-Distributed under the MIT License.
-
-MoroccoAntiVPN — Protect Your Server.
-
+🇲🇦 MoroccoAntiVPN
+​A lightweight, fast, and standalone Pawn include to restrict SA-MP and open.mp server access exclusively to Moroccan IP addresses.
+​📌 Overview
+​MoroccoAntiVPN is designed for server owners who want to enforce strict country-based access control. It automatically verifies incoming player IP addresses via HTTP lookup and allows access only to connections originating from Morocco (MA), keeping foreign traffic off your server.
+​✨ Features
+​🚀 Strict Country Restriction: Only permits connections from Morocco.
+​⚡ Automatic Actions: Automatically kicks non-Moroccan IP addresses with a customizable delay.
+​🌐 HTTP GeoIP Verification: Powered by ip-api.com for fast and reliable IP country lookups.
+​💻 Localhost Exemption: Automatically bypasses verification for local testing (127.0.0.1).
+​📦 Lightweight & Standalone: Zero heavy dependencies, clean drop-in integration.
+​🔄 SA-MP & open.mp Compatible: Works seamlessly with both server engines.
+​📥 Installation
