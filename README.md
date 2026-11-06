@@ -1,65 +1,54 @@
 MoroccoAntiVPN 
 
-Morocco Only Protection for SA-MP & open.mp 
-A lightweight Pawn include for Moroccan IP verification. 
+Advanced IP Country Verification for SA-MP & open.mp 
 
-![Pawn](https://img.shields.io/badge/Language-Pawn-blue) ![Platform](https://img.shields.io/badge/Platform-SA--MP%20%7C%20open.mp-green) ![Version](https://img.shields.io/badge/Version-1.0.0-purple) ![License](https://img.shields.io/badge/License-MIT-orange) 
+Protect your server. Allow Morocco. Block foreign IPs.
 
-Overview 
+About 
 
-MoroccoAntiVPN is a lightweight Pawn include designed to restrict server access to Moroccan IP addresses.
+MoroccoAntiVPN is a lightweight and easy-to-use Pawn include designed for SA-MP and open.mp servers.
 
-It uses GeoIP verification to identify the player's country and automatically blocks connections from outside Morocco.
+The system verifies player IP addresses and allows connections only from Morocco (MA).
 
-Features Morocco-only IP access (MA). Automatic country verification. Automatic player kick. HTTP-based GeoIP lookup. Localhost exemption. Easy integration. Standalone .inc include. Installation 
+Features Feature Description Morocco Only Allows Moroccan IP addresses GeoIP Check Automatic country verification Auto Kick Blocks foreign IP addresses HTTP System Online IP verification Easy Integration Simple .inc installation Localhost Localhost exemption Installation 
 
-1. Download
+Step 01 — Download
 
-Download MoroccoAntiVPN.inc and place it inside:
+Download the latest MoroccoAntiVPN.inc file.
 
-pawno/include/ 
+Step 02 — Install
 
-2. Include
+Move the file into:
 
-Add this to your gamemode:
+pawno/include/MoroccoAntiVPN.inc 
 
-#include <MoroccoAntiVPN> Usage 
+Step 03 — Include
 
-Initialize
+Add this line to your gamemode:
 
-public OnGameModeInit() { MAV_Init(); return 1; } 
+#include <MoroccoAntiVPN> Configuration 
 
-Player Connect
+Default country configuration:
 
-public OnPlayerConnect(playerid) { MAV_CheckPlayer(playerid); return 1; } 
+#define MAV_ALLOWED_COUNTRY "MA" #define MAV_KICK_DELAY 1500 Implementation Initialize public OnGameModeInit() { MAV_Init(); return 1; } Player Connection public OnPlayerConnect(playerid) { MAV_CheckPlayer(playerid); return 1; } Player Disconnection public OnPlayerDisconnect(playerid, reason) { MAV_ResetPlayer(playerid); return 1; } 
 
-Player Disconnect
+Note: Integrate these calls into your existing callbacks. Do not create duplicate callbacks.
 
-public OnPlayerDisconnect(playerid, reason) { MAV_ResetPlayer(playerid); return 1; } 
+Requirements SA-MP 0.3.7 or open.mp Pawn Compiler Internet connection ip-api.com GeoIP service Limitations 
 
-Add these calls to your existing callbacks rather than creating duplicate callbacks.
+This version performs country verification only.
 
-Configuration 
-
-Default country:
-
-#define MAV_ALLOWED_COUNTRY "MA" 
-
-Kick delay:
-
-#define MAV_KICK_DELAY 1500 Requirements SA-MP 0.3.7 or open.mp. Pawn compiler. Internet connection. ip-api.com GeoIP service. Important 
-
-This release verifies country location only. VPN, Proxy and Hosting detection are not implemented yet.
-
-GeoIP verification does not guarantee that an IP is not using a VPN.
+VPN, Proxy and Hosting detection are not included yet.
 
 Credits 
 
-Developed for SA-MP and open.mp communities.
+MoroccoAntiVPN Development
 
-MoroccoAntiVPN Development Team
+Made for the SA-MP & open.mp community.
 
 License 
 
-This project is licensed under the MIT License.
+Distributed under the MIT License.
+
+MoroccoAntiVPN — Protect Your Server.
 
